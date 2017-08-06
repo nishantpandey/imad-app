@@ -16,7 +16,6 @@ var content = {
                     </p>`
     },
         'article-Two' :{
-        
         'title': 'Article Two| Nishant Pandey',
         'heading': 'Article Two',
         'date': '9/6/2017',
@@ -67,7 +66,7 @@ var content = {
             </div>
         </body>
         
-    </html>`
+    </html>`;
     
     return htmlContent;
     }
