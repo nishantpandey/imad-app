@@ -34,8 +34,6 @@ var content = {
     }
 };
 
-var content = 
-
     function createTemplate(data) {
     var heading = data.heading;
     var title = data.title;
