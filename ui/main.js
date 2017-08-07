@@ -3,7 +3,7 @@ var img = document.getElementById("image");
 var distance = 0;
 function moveRight() {
     distance = distance + 1;
-    img.style.marginRight = distance + 'px';
+    img.style.marginLeft = distance + 'px';
 }
 
 img.onclick = function() {
