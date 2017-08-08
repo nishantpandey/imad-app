@@ -1,11 +1,9 @@
 console.log('Loaded!');
-var img = document.getElementById("image");
-var distance = 0;
-function moveRight() {
-    distance = distance + 1;
-    img.style.marginLeft = distance + 'px';
+var button = document.getElementById("counter");
+var counter = 0;
+button.onClick = function() {
+    counter = counter + 1;
+    var span = document.getElementById("count");
+    span.innerHtml = counter.toString();
 }
-`
-img.onclick = function() {
-    var interval = setInterval(moveRight,20);
-}`
+
