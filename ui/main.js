@@ -18,7 +18,7 @@ button.onclick = function() {
    request.send(null);
 };
 
-var submit = document.getElementByID("submit-btn");
+var submit = document.getElementById("submit-btn");
 submit.onclick = function() {
    var names = ["name1", "name2", "name3"];
    var list = '';
