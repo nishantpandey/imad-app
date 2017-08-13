@@ -66,14 +66,16 @@ var content = {
                 </div>
                <form>
                 <textarea id="words" rows="5" cols="70">Enter comment</textarea>
+                <input type="button" onclick="getwords()" value="Enter" />
               </form>
                 <p id="para"></p>
             </div>
-            <script>
-                  $("form").submit(function( event ) {
-                  $("#para").innerHTML = $(#words).value;
-                  event.preventDefault();
-                  });
+            <script type="text/javascript">
+                  function getwords() {
+                      var text = words.value;
+                      document.getElementById("para").innerHTML += '<p>'+ text;
+                      document.getElementById("words").value = "enter";
+                  }
             </script>
         </body>
         
