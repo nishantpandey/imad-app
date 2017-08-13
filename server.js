@@ -63,8 +63,10 @@ var content = {
                         ${content}
                     </p>
                 </div>
+                <div>
                 <textarea rows="4" cols="50" name="comment" form="usrform">
                     Enter your comments here...</textarea>
+                </div>
             </div>
         </body>
         
