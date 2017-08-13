@@ -47,6 +47,15 @@ var content = {
             <link href="ui/style.css" rel = "stylesheet"/>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         </head>
+        <style>
+               .footer {
+                 display: inline;        /* Default of all elements, unless UA stylesheet overrides */
+                 display: inline-block;  /* Characteristics of block, but sits on a line */
+                 display: block;         /* UA stylesheet makes things like <div> and <section> block */
+                 display: run-in;        /* Not particularly well supported or common */
+                 display: none;          /* Hide */
+               }
+        </style>
         <body>
             <div class = "container">
                 <div>
@@ -68,7 +77,7 @@ var content = {
                 <textarea id="words" rows="5" cols="70"placeholder ="Enter Comment"></textarea>
                 <input type="button" onclick="getwords()" value="Enter" />
               </form>
-              <div>
+              <div class="footer">
                 <p id="para"></p>
               <div>
             </div>
