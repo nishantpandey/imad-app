@@ -72,7 +72,7 @@ var content = {
                 <input type="button" onclick="getwords()" value="Enter" />
               </form>
               <div class="footer">
-                <p id="para" border = "1"></p>
+                <p id="para" border = "3"></p>
               <div>
             </div>
             <script type="text/javascript">
