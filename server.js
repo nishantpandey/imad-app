@@ -71,9 +71,8 @@ var content = {
             </div>
             <script>
                   $("form").submit(function( event ) {
-                  var para = document.getElementById("para");
-                  var comment = document.getElementById("words");
-                  para.innerHTML = comment.value;
+                  
+                  $("#para").innerHTML = $(#words).value;
                   event.preventDefault();
                   });
             </script>
