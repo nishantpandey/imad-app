@@ -69,7 +69,7 @@ var content = {
                 <p id="para"></p>
             </div>
             <script>
-                  $( "#words" ).submit(function( event ) {
+                  $("#words").submit(function( event ) {
                   var para = document.getElementById("para");
                   var comment = document.getElementById("words");
                   para.innerHTML = comment.value;
