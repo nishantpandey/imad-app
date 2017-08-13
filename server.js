@@ -48,13 +48,7 @@ var content = {
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         </head>
         <style>
-               .footer {
-                 display: inline;        /* Default of all elements, unless UA stylesheet overrides */
-                 display: inline-block;  /* Characteristics of block, but sits on a line */
-                 display: block;         /* UA stylesheet makes things like <div> and <section> block */
-                 display: run-in;        /* Not particularly well supported or common */
-                 display: none;          /* Hide */
-               }
+               
         </style>
         <body>
             <div class = "container">
@@ -85,7 +79,7 @@ var content = {
                   function getwords() {
                       var text = words.value;
                       document.getElementById("para").innerHTML += '<p>'+ text;
-                      document.getElementById("words").value = "enter";
+                      document.getElementById("words").value = "";
                   }
             </script>
         </body>
