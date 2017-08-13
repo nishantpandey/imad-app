@@ -66,7 +66,7 @@ var content = {
                 </div>
                <form>
                 <textarea id="words" rows="5" cols="70">Enter comment</textarea>
-                <input type="button" onclick="getwords()" value="Enter" />
+                <input type="button" onclick="getwords()" placeholder="Enter" />
               </form>
               <div>
                 <p id="para"></p>
