@@ -48,7 +48,11 @@ var content = {
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         </head>
         <style>
-               
+           .footer {
+               border-left: 6px solid grey;
+               background-color: lightgrey;
+            }
+           
         </style>
         <body>
             <div class = "container">
@@ -72,7 +76,7 @@ var content = {
                 <input type="button" onclick="getwords()" value="Enter" />
               </form>
               <div class="footer">
-                <p id="para" border = "3"></p>
+                <p id="para"></p>
               <div>
             </div>
             <script type="text/javascript">
