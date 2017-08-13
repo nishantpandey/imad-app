@@ -65,10 +65,17 @@ var content = {
                 </div>
                <form>
                 <textarea id="words" rows="5" cols="70">Enter comment</textarea>
-                <input type="button" onclick="getwords()" value="Enter" />
               </form>
                 <p id="para"></p>
             </div>
+            <script>
+                  $( "#words" ).submit(function( event ) {
+                  var para = document.getElementById("para");
+                  var comment = document.getElementById("words");
+                  para.innerHTML = comment.value;
+                  event.preventDefault();
+                  });
+            </script>
         </body>
         
     </html>`;
@@ -79,6 +86,7 @@ var content = {
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
 
 var counter = 0;
 app.get('/counter', function (req, res) {
