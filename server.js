@@ -82,7 +82,7 @@ var content = {
             <script type="text/javascript">
                   function getwords() {
                       var text = words.value;
-                      document.getElementById("para").innerHTML += '<br>'+<p>'+ text;
+                      document.getElementById("para").innerHTML += '<br>'+'<p>'+ text;
                       document.getElementById("words").value = "";
                   }
             </script>
