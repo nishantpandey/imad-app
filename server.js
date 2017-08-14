@@ -71,7 +71,7 @@ var content = {
                     </p>
                 </div>
                <form>
-                <textarea id="words" rows="5" cols="70"placeholder ="Enter Comment"></textarea>
+                <textarea id="words" rows="5" cols="105"placeholder ="Enter Comment"></textarea>
                 <input type="button" onclick="getwords()" value="Enter" />
               </form>
               <div class="footer">
