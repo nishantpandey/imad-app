@@ -49,8 +49,7 @@ var content = {
         </head>
         <style>
            .footer {
-               border-left: 6px solid grey;
-               background-color: lightgrey;
+               background-color: rgba(209, 197, 205, 0.9);
             }
            
         </style>
@@ -82,7 +81,7 @@ var content = {
             <script type="text/javascript">
                   function getwords() {
                       var text = words.value;
-                      document.getElementById("para").innerHTML += '<br>'+'<p>'+ text;
+                      document.getElementById("para").innerHTML += '<hr>'+'<p>'+ text;
                       document.getElementById("words").value = "";
                   }
             </script>
