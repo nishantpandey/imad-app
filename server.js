@@ -3,8 +3,10 @@ var morgan = require('morgan');
 var path = require('path');
 
 var app = express();
+var Pool = require('pg').Pool;
+
 app.use(morgan('combined'));
-var pool = require('pg').Pool;
+
 
 var config = {
     user :'nishantbitsmesra',
