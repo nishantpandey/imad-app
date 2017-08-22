@@ -1,6 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var crpto = require('crypto');
 
 var app = express();
 var Pool = require('pg').Pool;
@@ -102,9 +103,20 @@ var content = {
     
     return htmlContent;
     }
+    
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+function hash(input, salt) {
+    var hashed = crypto.pbkdf2Sync(input, salt, 10000, S12, 'shas12');
+    return hashed.toString('hex');
+}
+
+app.get('hash/:input', function (req, res) {
+  var hashedString = hash(req.params.input,'this-is-some-randam-string')
+  res.send(hashedString);
 });
 
 var pool = new Pool(config);
