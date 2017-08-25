@@ -2,8 +2,7 @@ console.log('Loaded!');
 
 var submit = document.getElementById("submit_butn");
 submit.onclick = function() {
-    var name = document.getElementById("name");
-    name = name.value;
+   
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if(request.readyState === XMLHttpRequest.DONE) {
