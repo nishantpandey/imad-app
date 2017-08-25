@@ -19,6 +19,9 @@ submit.onclick = function() {
     var username = document.getElementById("username");
     var password = document.getElementById("password");
     
+    console.log(username);
+    console.log(password);
+    
     request.open('POST', 'http://nishantbitsmesra.imad.hasura-app.io/login', true);
-    request.send(JSON.strinfigy({username: username, password: password}));
+    request.send(JSON.stringify({username: username, password: password}));
 };
