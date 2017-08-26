@@ -2,11 +2,13 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var crypto = require('crypto');
+var bodyParser = require('body-parser');
 
 var app = express();
 var Pool = require('pg').Pool;
 
 app.use(morgan('combined'));
+app.user(bodyParser.Json());
 
 
 var config = {
@@ -113,6 +115,29 @@ function hash(input, salt) {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
     return hashed.toString('hex');
 }
+
+app.post('/create-user', function(req, res){
+    var username = req.body.username;
+    var password = req.body.password;
+    var salt = crypto.getRandomByes(128).toString('hex');
+    var dbString = hash(password, salt);
+    pool.query('INSERT into user (username, password) VALUES ($1, $2)', [username, dbstring], function(result, error){
+       if(error) {
+           res.status(500).send(error.toString());
+       }else {
+           res.send('User Created Sucessfully');
+       }
+        
+    });
+    
+});
+
+app.post('/login', function(req,res) {
+   var username = req.body.username;
+   var password = req.body.password;
+   
+    
+});
 
 app.get('/hash/:input', function (req, res) {
   var hashedString = hash(req.params.input,'this-is-some-randam-string')
