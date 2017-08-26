@@ -8,7 +8,7 @@ var app = express();
 var Pool = require('pg').Pool;
 
 app.use(morgan('combined'));
-app.user(bodyParser.Json());
+app.user(bodyParser.json());
 
 
 var config = {
