@@ -17,7 +17,10 @@ submit.onclick = function() {
     };
      
     var username = document.getElementById("username");
+    
     var password = document.getElementById("password");
+    username = username.value;
+    password = password.value;
     
     console.log(username);
     console.log(password);
