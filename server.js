@@ -12,7 +12,7 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 
 // User Session Information
-app.user(session({
+app.use(session({
    secret: 'someRandomSecretValue',
    cookie: {maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
