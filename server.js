@@ -128,6 +128,31 @@ function hash(input, salt) {
     return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
 
+app.post('/login', function(req,res) {
+   var username = req.body.username;
+   var password = req.body.password;
+   pool.query('SELECT * from "user" WHERE username = $1', [username], function(result, error) {
+       if(error) {
+           res.status(500).send(error.toString());
+       }else if(result.rows.length === 0) {
+           res.send(403).send("Username/Password is incorrect");
+       }else {
+           var dbString = result.rows[0].password;
+           var salt = dbString.split('$')[2];
+           var hashedPassword = hash(password, salt);
+           if(hashedPassword === password) {
+               res.send('Credentials Correct');
+           }else {
+               res.send(403).send("Username/Password is uncorrect");
+           }
+           
+       }
+       
+   });
+   
+    
+});
+
 app.post('/create-user', function(req, res){
     var username = req.body.username;
     var password = req.body.password;
@@ -146,30 +171,7 @@ app.post('/create-user', function(req, res){
     
 });
 
-app.post('/login', function(req,res) {
-   var username = req.body.username;
-   var password = req.body.password;
-   pool.query('SELECT * from "user" WHERE username = $1', [username], function(result, error) {
-       if(error) {
-           res.status(500).send(error.toString());
-       }else if(result.rows.length === 0) {
-           res.send(403).send("Username/Password is uncorrect");
-       }else {
-           var dbString = result.rows[0].password;
-           var salt = dbString.split('$')[2];
-           var hashedPassword = hash(password, salt);
-           if(hashedPassword === password) {
-               res.send('Credentials Correct');
-           }else {
-               res.send(403).send("Username/Password is uncorrect");
-           }
-           
-       }
-       
-   });
-   
-    
-});
+
 
 app.get('/hash/:input', function (req, res) {
   var hashedString = hash(req.params.input,'this-is-some-randam-string')
