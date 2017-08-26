@@ -132,7 +132,7 @@ function hash(input, salt) {
 app.post('/login', function(req,res) {
    var username = req.body.username;
    var password = req.body.password;
-   alert('Reached Server');
+
    pool.query('SELECT * from "user" WHERE username = $1', [username], function(result, error) {
        if(error) {
            res.status(500).send(error.toString());
