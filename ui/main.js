@@ -21,6 +21,8 @@ submit.onclick = function() {
     var password = document.getElementById("password");
     username = username.value;
     password = password.value;
+    username.value = '';
+    password.value = '';
     
     console.log(username);
     console.log(password);
