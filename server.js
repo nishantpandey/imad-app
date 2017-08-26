@@ -133,7 +133,7 @@ app.post('/login', function(req,res) {
    var username = req.body.username;
    var password = req.body.password;
 
-   pool.query('SELECT * from "user" WHERE username = $1', [username], function(result, error) {
+   pool.query('SELECT * FROM "user" WHERE username = $1', [username], function(error, result) {
        if(error) {
            res.status(500).send(error.toString());
        }else if(result.rows.length === 0) {
