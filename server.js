@@ -118,6 +118,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/login_details/login', function (req, res) {
+  res.sendFile(path.join(__dirname, 'login_details', 'login.html'));
+});
+
 var pool = new Pool(config);
 
 app.get('/test-db', function(req,res) {
